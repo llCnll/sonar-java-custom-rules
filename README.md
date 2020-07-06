@@ -9,7 +9,7 @@ This example demonstrates how to write **Custom Rules** for SonarJava.
 4. test.java.org.sonar.samples.java.checks 添加自定义测试类
 
 # 注意
-10.17.1.75 sonarqube版本为7.0  
+由于服务器的 sonarqube版本为7.0  
 因此在 #第一个自定插件 的时候, 不能使用master(要求sonarqube版本为8.1).  
 
 
