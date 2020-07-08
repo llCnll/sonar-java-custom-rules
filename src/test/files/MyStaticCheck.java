@@ -5,6 +5,8 @@ public class MyStaticCheck{
 
     private static final String URL2 = "hhhh/hhhh";
 
+    public static final Integer URL3 = 22;
+
     public static void main(String[] args){
 
     }

@@ -18,7 +18,7 @@ import java.util.List;
         name = "Constant should not in the class",
         description = "Constant should write into file.",
         priority = Priority.CRITICAL,
-        tags = {"bug"})
+        tags = {"Code Smell"})
 public class MyStaticCheck extends IssuableSubscriptionVisitor {
     @Override
     public List<Tree.Kind> nodesToVisit() {
@@ -29,17 +29,18 @@ public class MyStaticCheck extends IssuableSubscriptionVisitor {
     public void visitNode(Tree tree) {
         VariableTree param = (VariableTree)tree;
         if(checkPublicStaticString(param)){
-            reportIssue(param, "是静态常量~");
-            System.out.print("修饰符: ");
+            reportIssue(param, "Constant~");
+            System.out.print("modifier: ");
             param.modifiers().stream().forEach(modifier -> System.out.print(modifier.firstToken().text()+" "));
             System.out.println();
-            System.out.println("变量类型: "+param.type());
-            System.out.println("变量名称: "+param.simpleName());
-            System.out.println("变量值: "+ param.initializer().firstToken().text());
+            System.out.println("type: "+param.type());
+            System.out.println("name: "+param.simpleName());
+            System.out.println("value: "+ param.initializer().firstToken().text());
+            System.out.println("============================");
         }
     }
 
     public boolean checkPublicStaticString(VariableTree param){
-        return param.symbol().isPublic() && param.symbol().isStatic() && param.symbol().isFinal();
+        return param.symbol().isPublic() && param.symbol().isStatic() && param.symbol().isFinal()&&"String".equals(param.type().toString());
     }
 }
