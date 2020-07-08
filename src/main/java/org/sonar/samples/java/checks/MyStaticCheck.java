@@ -17,8 +17,8 @@ import java.util.List;
         key = "MyStaticCheck",
         name = "Constant should not in the class",
         description = "Constant should write into file.",
-        priority = Priority.CRITICAL,
-        tags = {"Code Smell"})
+        priority = Priority.MINOR,
+        tags = {"codesmells"})
 public class MyStaticCheck extends IssuableSubscriptionVisitor {
     @Override
     public List<Tree.Kind> nodesToVisit() {
