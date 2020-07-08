@@ -48,7 +48,7 @@ public final class RulesList {
       AvoidSuperClassRule.class,
       AvoidUnmodifiableListRule.class,
       MyCustomSubscriptionRule.class,
-      SecurityAnnotationMandatoryRule.class, MyFirstCustomCheck.class));
+      SecurityAnnotationMandatoryRule.class, MyFirstCustomCheck.class, MyStaticCheck.class));
   }
 
   public static List<Class<? extends JavaCheck>> getJavaTestChecks() {
