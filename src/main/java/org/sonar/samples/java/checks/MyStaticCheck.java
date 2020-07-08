@@ -1,9 +1,10 @@
 package org.sonar.samples.java.checks;
 
+import org.sonar.check.Priority;
 import org.sonar.check.Rule;
-import org.sonar.java.model.declaration.VariableTreeImpl;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.Tree;
+import org.sonar.plugins.java.api.tree.VariableTree;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,7 +13,12 @@ import java.util.List;
  * @author cn
  * @date 2020-07-07 14:36
  */
-@Rule(key = "MyStaticCheck")
+@Rule(
+        key = "MyStaticCheck",
+        name = "Constant should not in the class",
+        description = "Constant should write into file.",
+        priority = Priority.CRITICAL,
+        tags = {"bug"})
 public class MyStaticCheck extends IssuableSubscriptionVisitor {
     @Override
     public List<Tree.Kind> nodesToVisit() {
@@ -21,7 +27,7 @@ public class MyStaticCheck extends IssuableSubscriptionVisitor {
 
     @Override
     public void visitNode(Tree tree) {
-        VariableTreeImpl param = (VariableTreeImpl)tree;
+        VariableTree param = (VariableTree)tree;
         if(checkPublicStaticString(param)){
             reportIssue(param, "是静态常量~");
             System.out.print("修饰符: ");
@@ -33,7 +39,7 @@ public class MyStaticCheck extends IssuableSubscriptionVisitor {
         }
     }
 
-    public boolean checkPublicStaticString(VariableTreeImpl param){
+    public boolean checkPublicStaticString(VariableTree param){
         return param.symbol().isPublic() && param.symbol().isStatic() && param.symbol().isFinal();
     }
 }
