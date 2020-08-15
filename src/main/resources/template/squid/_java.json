@@ -1,0 +1,13 @@
+{
+  "title": "${squid.json.title}",
+  "type": "${squid.json.type}",
+  "status": "${squid.json.status}",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [
+    "${squid.json.tags}"
+  ],
+  "defaultSeverity": "${squid.json.defaultSeverity}"
+}
