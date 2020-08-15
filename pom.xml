@@ -137,7 +137,7 @@
 				<configuration>
 					<pluginKey>java-custom</pluginKey>
 					<pluginName>Java Custom Rules</pluginName>
-					<pluginClass>org.sonar.samples.java.MyJavaRulesPlugin</pluginClass>
+					<pluginClass>com.chennan.sonar.java.MyJavaRulesPlugin</pluginClass>
 					<sonarLintSupported>true</sonarLintSupported>
 					<sonarQubeMinVersion>6.7</sonarQubeMinVersion>
 					<requirePlugins>java:${sonarjava.version}</requirePlugins>

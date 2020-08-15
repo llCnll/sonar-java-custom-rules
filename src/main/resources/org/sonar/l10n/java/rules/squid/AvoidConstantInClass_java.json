@@ -1,5 +1,5 @@
 {
-  "title": "Avoid method with same type in argument",
+  "title": "Constant should not in the class",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,7 @@
     "constantCost": "10min"
   },
   "tags": [
-    "pitfall"
+    "constant"
   ],
   "defaultSeverity": "Minor"
 }

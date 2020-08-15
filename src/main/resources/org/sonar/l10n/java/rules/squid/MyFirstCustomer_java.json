@@ -1,5 +1,5 @@
 {
-  "title": "Avoid method with same type in argument",
+  "title": "Return type and parameter of a method should not be the same",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,7 @@
     "constantCost": "10min"
   },
   "tags": [
-    "pitfall"
+    "return"
   ],
-  "defaultSeverity": "Minor"
+  "defaultSeverity": "Critical"
 }
